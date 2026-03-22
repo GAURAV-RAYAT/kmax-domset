@@ -137,7 +137,3 @@ Returns a set of node indices forming a dominating set.
 - `matplotlib >= 3.4`
 
 ---
-
-## License
-
-MIT License — see [LICENSE](LICENSE).
