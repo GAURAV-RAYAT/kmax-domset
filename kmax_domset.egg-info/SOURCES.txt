@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+kmax_domset/__init__.py
+kmax_domset/algorithm.py
+kmax_domset.egg-info/PKG-INFO
+kmax_domset.egg-info/SOURCES.txt
+kmax_domset.egg-info/dependency_links.txt
+kmax_domset.egg-info/requires.txt
+kmax_domset.egg-info/top_level.txt
