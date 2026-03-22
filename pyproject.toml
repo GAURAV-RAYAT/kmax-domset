@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "kmax-domset"
+version = "0.1.0"
+description = "K-Max algorithm for computing dominating sets in undirected graphs"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Gaurav Rayat" }
+]
+keywords = [
+    "graph theory",
+    "dominating set",
+    "network analysis",
+    "combinatorial optimisation",
+    "karci centrality",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "networkx>=2.6",
+    "matplotlib>=3.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/GauravRayat/kmax-domset"
+"Bug Tracker" = "https://github.com/GauravRayat/kmax-domset/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kmax_domset*"]
