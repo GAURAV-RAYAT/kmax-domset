@@ -176,6 +176,10 @@ class KMaxAlgorithm:
         """
         Compute a dominating set of the graph using the K-Max algorithm.
 
+        The algorithm first selects pendent nodes (leaf nodes with degree 1)
+        to consider the graph structure, then continues with the regular K-Max
+        algorithm for remaining undominated nodes.
+
         Returns
         -------
         set[int]
@@ -187,6 +191,21 @@ class KMaxAlgorithm:
         D = set()
         all_nodes = set(range(self.n))
 
+        # PHASE 0 — Select pendent nodes first (structure-aware initialization)
+        deg_G = self._compute_deg_G()
+        pendent_nodes = [v for v in deg_G if deg_G[v] == 1]
+        
+        for v in pendent_nodes:
+            if v not in dominated:
+                D.add(v)
+                dominated.add(v)
+                dominated.update(self.graph[v])
+                
+                # Check if graph is fully covered
+                if dominated == all_nodes:
+                    return D
+
+        # PHASE 1-3 — K-Max algorithm for remaining undominated nodes
         while dominated != all_nodes:
             deg_G = self._compute_deg_G()
             T = self._construct_kmax_tree(deg_G)

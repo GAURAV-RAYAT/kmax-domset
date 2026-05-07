@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kmax-domset"
-version = "0.1.0"
+version = "0.1.1"
 description = "K-Max algorithm for computing dominating sets in undirected graphs"
 readme = "README.md"
 license = { file = "LICENSE" }
